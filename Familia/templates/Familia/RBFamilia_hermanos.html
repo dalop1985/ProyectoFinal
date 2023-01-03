@@ -1,0 +1,30 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es la página<br>del Resultado de la<br>Búsqueda de los Hermanos</h1>
+{% endblock %} 
+
+{% block contenido %}
+{% if nombre %}
+<table border="1px" width ="80%" align="center" style="border-collapse:collapse; text-align:center;">
+    <tr>
+      <th>Nombre </th>
+      <th>Apellido </tthd>
+      <th>Edad </th>
+      <th>Fecha Nacimiento </th>
+    </tr>
+  {% for Hermanos in nombre %}
+    <tr>
+      <td>{{Hermanos.nombre}}</td>
+      <td>{{Hermanos.apellido}}</td>
+      <td>{{Hermanos.edad}}</td>
+      <td>{{Hermanos.nacimiento}}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p> No Existen registros con el nombre seleccionado </p>
+{% endif %}
+{% endblock %} 

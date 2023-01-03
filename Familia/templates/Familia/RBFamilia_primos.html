@@ -1,0 +1,30 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es la página<br>del Resultado de la<br>Búsqueda de los Primos</h1>
+{% endblock %} 
+
+{% block contenido %}
+{% if nombre %}
+<table border="1px" width ="80%" align="center" style="border-collapse:collapse; text-align:center;">
+    <tr>
+      <th>Nombre </th>
+      <th>Apellido </th>
+      <th>Edad </th>
+      <th>Fecha Nacimiento </th>
+    </tr>
+  {% for Primos in nombre %}
+    <tr>
+      <td>{{Primos.nombre}}</td>
+      <td>{{Primos.apellido}}</td>
+      <td>{{Primos.edad}}</td>
+      <td>{{Primos.nacimiento}}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p> No Existen registros con el nombre seleccionado </p>
+{% endif %}
+{% endblock %} 

@@ -1,0 +1,19 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es<br>La página para<br>Agregar Avatar a {{ usuario.username }}</h1>
+{% endblock %} 
+
+{% block contenido %}
+<p class="font-secondary paragraph-lg text-dark">Formulario</p>
+<form action="{% url 'AgregarAvatar' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+<table>
+  {{ form.as_table }}
+</table>
+
+{{ mensaje }}
+<input type="submit" value="Agregar"> 
+</form>
+{% endblock %} 

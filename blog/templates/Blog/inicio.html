@@ -1,0 +1,15 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es<br>La página del<br>Blog Familiar</h1>
+{% endblock %} 
+
+{% block contenido %}
+<p class="font-secondary paragraph-lg text-dark">Este es el contenido de la página de inicio</p>
+
+<img src="{{ imagen }}" alt="">
+
+{{ mensaje }}
+{% endblock %}

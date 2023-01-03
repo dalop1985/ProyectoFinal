@@ -1,0 +1,19 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es<br>La página para<br>Editar Usuarios {{ usuario }}</h1>
+{% endblock %} 
+
+{% block contenido %}
+<p class="font-secondary paragraph-lg text-dark">Edición de Usuarios para la Base de Datos</p>
+<form action="{% url 'Admin_perfil' %}" method="POST"> {% csrf_token %}
+  <table border="1px" width ="80%" align="center" style="border-collapse:collapse; text-align:center;">
+    {{ form.as_table }}
+  </table>
+    <input type="submit" value="Actualizar"> 
+  </form>
+
+  {{ mensaje }}
+{% endblock %} 

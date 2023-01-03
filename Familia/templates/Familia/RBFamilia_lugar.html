@@ -1,0 +1,26 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es la página<br>del Resultado de la<br>Búsqueda de los Lugares</h1>
+{% endblock %} 
+
+{% block contenido %}
+{% if nombre %}
+<table border="1px" width ="80%" align="center" style="border-collapse:collapse; text-align:center;">
+    <tr>
+      <th>Ciudad </th>
+      <th>Estado </tthd>
+    </tr>
+  {% for Viven in nombre %}
+    <tr>
+      <td>{{Viven.ciudad}}</td>
+      <td>{{Viven.estado}}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p> No Existen registros con el nombre seleccionado </p>
+{% endif %}
+{% endblock %} 

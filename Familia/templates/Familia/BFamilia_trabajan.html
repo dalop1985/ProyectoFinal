@@ -1,0 +1,20 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es la página<br>del Formulario de<br>Búsqueda de los Trabajos</h1>
+{% endblock %} 
+
+{% block contenido %}
+<p class="font-secondary paragraph-lg text-dark">Lista de Información de los Trabajos</p>
+
+<form action="{% url 'Btrabajan' %}" method="GET"> 
+
+  <input type="text" name="nombre" id="nombre">
+  
+  <input type="submit" value="Buscar"> 
+
+</form>
+{{ mensaje }}
+{% endblock %} 

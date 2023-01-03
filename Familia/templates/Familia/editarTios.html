@@ -1,0 +1,19 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es<br>La página para<br>Editar a {{ Tios.nombre }}</h1>
+{% endblock %} 
+
+{% block contenido %}
+<p class="font-secondary paragraph-lg text-dark">Formulario</p>
+<form action="{% url 'editarTios' Tios.id %}" method="POST"> {% csrf_token %}
+<table>
+  {{ form.as_table }}
+</table>
+
+{{ mensaje }}
+<input type="submit" value="Editar"> 
+</form>
+{% endblock %} 

@@ -1,0 +1,32 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es la página<br>del Resultado de la<br>Búsqueda de los trabajos</h1>
+{% endblock %} 
+
+{% block contenido %}
+{% if nombre %}
+<table border="1px" width ="80%" align="center" style="border-collapse:collapse; text-align:center;">
+    <tr>
+      <th>Profesión </th>
+      <th>Título </tthd>
+      <th>Email </th>
+      <th>Activo </th>
+    </tr>
+  {% for Trabajo in nombre %}
+    <tr>
+      <td>{{Trabajo.profesion}}</td>
+      <td>{{Trabajo.titulo}}</td>
+      <td>{{Trabajo.mail}}</td>
+      {% if Trabajo.activo == 1 %}
+      <td>Sí</td> {% else %} <td>No</td>
+      {% endif %}
+    </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p> No Existen registros con el nombre seleccionado </p>
+{% endif %}
+{% endblock %} 

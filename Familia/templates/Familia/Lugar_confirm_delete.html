@@ -1,0 +1,15 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es<br>La página para<br>Borrar a los Lugares</h1>
+{% endblock %} 
+
+{% block contenido %}
+<form method="post"> {% csrf_token %}
+  Seguro que deseas eliminar el Lugar "{{ object }}"?
+
+<input type="submit" value="SÍ"> 
+</form>
+{% endblock %} 

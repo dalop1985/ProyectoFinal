@@ -1,0 +1,17 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es<br>La página de<br>los Lugares</h1>
+{% endblock %} 
+
+{% block contenido %}
+<p class="font-secondary paragraph-lg text-dark">Este es el contenido de la página de los Lugares donde vive mi familia</p>
+<form action="{% url 'Lugar' %}" method="POST"> {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+    <input type="submit" value="Enviar"> 
+  </form>
+{% endblock %} 

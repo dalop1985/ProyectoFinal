@@ -1,0 +1,23 @@
+{% extends 'Familia/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  <h1 class="text-white font-tertiary">Esta es<br>La página de<br>los Tios</h1>
+{% endblock %} 
+
+{% block contenido %}
+<p class="font-secondary paragraph-lg text-dark">Formulario</p>
+<form action="{% url 'Tios' %}" method="POST"> {% csrf_token %}
+<table>
+  {{ form.as_table }}
+</table>
+
+  <!--<p>Nombre: <input type="text" name="nombre"></p>>
+  <p>Apellido: <input type="text" name="apellido"></p>
+  <p>Proviene: <input type="text" name="proveniente"></p>
+  <p>Edad: <input type="text" name="edad"></p>
+  <p>Fecha Nacimeinto: <input type="date" name="nacimiento"></p>-->
+  <input type="submit" value="Enviar"> 
+</form>
+{% endblock %} 
